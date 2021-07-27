@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/login', function () {
+    return view('login', ["user"=>"hallo", "id"=>"www.w.com"]);
+});
+Route::get('/home', function () {
+    $products=[
+        ["title"=>"T-Shirt", "price"=>"100"],
+        ["title"=>"T-Shirt", "price"=>"100"],
+        ["title"=>"T-Shirt", "price"=>"100"]
+    ];
+    return view('home', ["product"=>$products]);
+});
